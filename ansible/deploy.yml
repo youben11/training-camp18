@@ -1,0 +1,14 @@
+---
+- hosts: tc-project
+  become: no
+  gather_facts: false
+
+  tasks:
+    - name: clone project
+      git:
+        repo: https://github.com/youben11/training-camp18
+        dest: /home/youben/training-camp18
+
+    - name: start services
+      docker_service:
+        project_src: /home/youben/training-camp18

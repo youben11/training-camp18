@@ -1,0 +1,55 @@
+---
+- hosts: tc-project
+  become: yes
+  gather_facts: no
+  vars:
+    ADD_USER_TO_GROUP: true
+    ADMIN_USER: youben
+
+  tasks:
+    - name: Install required pkgs
+      yum:
+        name:
+            - yum-utils
+            - device-mapper-persistent-data
+            - lvm2
+            - git
+        state: latest
+
+    - name: Add Docker repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docer-ce.repo
+
+    - name: Install Docker
+      package:
+        name: docker-ce
+        state: latest
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add ADMIN_USER to docker group
+      user:
+        name: "{{ ADMIN_USER }}"
+        groups: docker
+        append: yes
+      when: ADD_USER_TO_GROUP == true
+
+    - name: pre-installation Docker Compose
+      yum:
+        name:
+          - epel-release
+          - python-pip
+
+    - name: installation Docker Compose
+      pip:
+        name: docker-compose
+
+    - name: python upgrade
+      yum:
+        name: 'python*'
+        state: latest
