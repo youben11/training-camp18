@@ -27,7 +27,7 @@
         state: latest
 
     - name: Start Docker service
-      service:
+      systemd:
         name: docker
         state: started
         enabled: yes
