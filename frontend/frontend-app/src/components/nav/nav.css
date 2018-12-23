@@ -1,0 +1,30 @@
+
+.logo {
+    width: 30vmin;
+    height: 15vmin;
+    padding: 0;
+    margin:0;
+    filter: brightness() invert(10%) sepia(80%) saturate(985%) hue-rotate(335deg) brightness(97%) contrast(201%);
+}
+.ls{
+
+    
+        width: 5vmin;
+        height: 5vmin;
+        padding: 0;
+        margin:0;
+        filter: brightness() invert(10%) sepia(80%) saturate(985%) hue-rotate(335deg) brightness(97%) contrast(201%);
+
+    
+
+
+
+
+}
+.f{
+
+margin-left: 500%
+
+
+
+}

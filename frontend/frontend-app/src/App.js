@@ -9,12 +9,13 @@ import Nav from './components/nav/Nav'
 class App extends Component {
   render() {
     return (
-      <div   style={{backgroundImage:'url(${Bg})',height:"660px"}} className="App">
-      <Header/>
-       <Login/>
-       <Social></Social>
-       <Nav></Nav>
-      </div>
+      <div     style={{backgroundImage:`url(${Bg})`,height:"660px"}} className="App">
+    <Header></Header>
+    <Login></Login>
+    <Social></Social>
+    
+    </div>
+    
     );
   }
 }
