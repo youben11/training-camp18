@@ -14,6 +14,7 @@
             - device-mapper-persistent-data
             - lvm2
             - git
+            - bash-completion
         state: latest
 
     - name: Add Docker repo
