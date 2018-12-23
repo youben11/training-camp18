@@ -12,3 +12,5 @@
     - name: start services
       docker_service:
         project_src: /home/youben/training-camp18
+        state: present
+        build: yes
