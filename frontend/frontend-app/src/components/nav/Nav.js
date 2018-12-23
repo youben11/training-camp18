@@ -1,6 +1,6 @@
 import React ,{Component} from 'react'
-// import Logo from '../../assets/icons/logo.png'
-// import serach from '../../assets/icons/search-logo.png'
+import Logo from '../../assets/icons/logo.png'
+import serach from '../../assets/icons/search-logo.png'
 import './nav.css'
 
 class Nav extends Component{
