@@ -3,11 +3,11 @@ const Schema = mongoose.Schema
 
 const GroupeSchema = new Schema ({
     administrateurIds:{
-        type: mixed, //or mixed
-        required:"Administrateur id is re"
+        type: String, //or String
+        required:"Administrateur id is required"
     },
     membreIds:{
-        type:mixed,
+        type:String,
     },
     defis:{
         type:Array,
@@ -17,6 +17,7 @@ const GroupeSchema = new Schema ({
     },
     confidentialite:{
         type:String,
-        default:public
+        default:"public"
     }
 })
+export default GroupeSchema
