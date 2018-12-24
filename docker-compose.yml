@@ -2,4 +2,40 @@ version: '3'
 
 services:
   backend:
-    image: node:10-alpine
+    image: tc-backend
+    build: ./backend
+    restart: on-failure
+    depends_on:
+      - mongodb
+    networks:
+      - db
+      - fb
+
+  frontend:
+    image: tc-frontend
+    build: ./frontend
+    restart: on-failure
+    ports:
+      - 80:3000
+    depends_on:
+      - backend
+    networks:
+      - fb
+
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: toor
+
+networks:
+  db:
+  fb:
+
+volumes:
+  mongodata:
