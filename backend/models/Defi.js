@@ -2,14 +2,18 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const DefiSchema = new Schema ({
+    idDefi:{
+        type:String
+    },
     utilisateurId:{
-        type:mixed
+        type:String
     },
     groupeId:{
-        type:mixed
+        type:String
     },
     defi:{
         type:String
     }
     
 })
+export default DefiSchema

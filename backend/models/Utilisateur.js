@@ -22,7 +22,7 @@ const UtilisateurSchema = new Schema ({
         contentType:String
 
     },
-    confidentiabilite:{
+    confidentialite:{
         type:String,
         default:"public"
 

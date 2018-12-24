@@ -14,7 +14,7 @@ class Nav extends Component{
         <ul className="uk-navbar-nav">
             <li>
                 <a href="#">
-                  
+
                     Features
                 </a>
             </li>
@@ -23,23 +23,23 @@ class Nav extends Component{
             <div>Some </div>
         </div>
         <div className="uk-navbar-item"  >
-    <form className="f"   action="javascript:void(0)"> 
-     
+    <form className="f"   action="javascript:void(0)">
+
     <input   className= "uk-input uk-form-width-small"  type="text" placeholder="SEARCH"  />
-   
-    
+
+
      <a href=" " ><img  className="ls" src={serach} alt="seach-logo"/></a>
-    
-    
+
+
     </form>
-        
-        
+
+
         </div>
 
         </div>
 
         </nav>
- 
+
 
     )
 }
